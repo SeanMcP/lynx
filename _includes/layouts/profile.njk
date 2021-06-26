@@ -1,0 +1,20 @@
+---
+layout: layouts/base.njk
+id: profile
+---
+<main>
+    <h1>{{ title }}</h1>
+    <p>{{ description }}</p>
+    <nav class="links">
+        {% for link in links %}
+            <a href="{{ link.url }}">{{ link.label }}</a>
+        {% endfor %}
+    </nav>
+    <nav class="socials">
+        {% for platform, handle in social %}
+            {% social_link platform, handle %}
+        {% endfor %}
+    </nav>
+</main>
+
+<aside>Powered by Lynx</aside>
